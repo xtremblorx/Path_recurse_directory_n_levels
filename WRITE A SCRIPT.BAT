@@ -27,3 +27,32 @@ goto lop
 
 
 
+SETLocal EnableDELAYEDexpansioN
+set /a counter=18
+
+SET PATHFILE=c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY
+
+:lop
+
+TIMEOUT 2
+set /a counter+=1
+
+ECHO writer = open('C:\\Users\\Anil Bapna\\Desktop\\win.log.part.!counter!.txt','w')>>"%PATHFILE%"
+ECHO file = open('C:\\Users\\Anil Bapna\\Desktop\\win.log.1.txt','r')>>"%PATHFILE%"
+ECHO lines = file.readlines()>>"%PATHFILE%"
+ECHO import re >>"%PATHFILE%"
+powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"%PATHFILE%" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"%PATHFILE%")& powershell -c "write-host $\"'\"">>"%PATHFILE%"
+ECHO for line in lines:>>"%PATHFILE%"
+POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"%PATHFILE%"
+Start Cmd /v:off /c echo_me.bat
+ timeout 3
+
+POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%PATHFILE%"
+POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%PATHFILE%"
+ECHO writer.close()>>"%PATHFILE%"
+
+echo file.close()>>"%PATHFILE%"
+
+rename PYTHON.SCRIPT.PY PYTHON.SCRIPT.!counter!.PY
+
+goto lop
