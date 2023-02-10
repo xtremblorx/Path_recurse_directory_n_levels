@@ -25,6 +25,8 @@ ECHO writer.close()>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 
 echo file.close()>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 
+REM this is where I rename the python file according to the recurse level
+
 rename PYTHON.SCRIPT.PY PYTHON.SCRIPT.!counter!.PY
 
 goto lop
