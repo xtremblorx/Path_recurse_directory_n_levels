@@ -32,13 +32,13 @@ rename PYTHON.SCRIPT.PY PYTHON.SCRIPT.!counter!.PY
 goto lop
 
 
-
+rem The Following is Just a Duplicate (but, Different) Version
 SETLocal EnableDELAYEDexpansioN
 set /a counter=18
 
 SET PATHFILE=c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY
 
-:lop
+:lopp
 
 TIMEOUT 2
 set /a counter+=1
@@ -61,4 +61,4 @@ echo file.close()>>"%PATHFILE%"
 
 rename PYTHON.SCRIPT.PY PYTHON.SCRIPT.!counter!.PY
 
-goto lop
+goto lopp
