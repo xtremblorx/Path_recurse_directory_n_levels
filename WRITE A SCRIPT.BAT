@@ -1,9 +1,13 @@
 SETLocal EnableDELAYEDexpansioN
-set /a counter=18
+set /a counter=0
+rem THIS IS THE PATH POSITION, STARTING IS O
+
 :lop
 
 TIMEOUT 2
 set /a counter+=1
+
+rem FILE TO WRITE PATH BE CHANGED
 
 ECHO writer = open('C:\\Users\\Anil Bapna\\Desktop\\win.log.part.!counter!.txt','w')>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 ECHO file = open('C:\\Users\\Anil Bapna\\Desktop\\win.log.1.txt','r')>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
