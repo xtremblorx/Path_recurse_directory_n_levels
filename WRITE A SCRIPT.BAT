@@ -17,8 +17,9 @@ powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"c:\USERS\ANIL 
 ECHO for line in lines:>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 Start Cmd /v:off /c echo_me.bat
+ 
  timeout 3
-
+REM this timeout is important to make sure the file Writes properly to the Same file this script is already writing to
 POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
 ECHO writer.close()>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
