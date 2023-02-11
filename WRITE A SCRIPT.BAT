@@ -5,8 +5,12 @@ set /a counter=0
 echo Please run dir /s ^>win.log.1.txt  AND enter the folder path BELOW:
 rem THIS IS THE PATH POSITION, STARTING IS O
 echo Enter path without Quotes with no trailing slash in the end 
-set /p str=
-set str=%str:\=\\%
+echo .-Also try to make sure folder location is bat friendly, where it can read-write preferably the desktop-.
+
+
+set /p ptr=
+echo CDing into %ptr%
+set str=%ptr:\=\\%
 
 :lop
 
@@ -19,26 +23,27 @@ rem PLEASE ENTER windows friendly path avoid Ampersand and other characters whic
 
 rem FILE TO WRITE PATH BE CHANGED
 
-ECHO writer = open('%str%\\win.log.part.!counter!.txt','w')>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-ECHO file = open('%str%\\win.log.1.txt','r')>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-ECHO lines = file.readlines()>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-ECHO import re >>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY")& powershell -c "write-host $\"'\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-ECHO for line in lines:>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
+ECHO writer = open('%str%\\win.log.part.!counter!.txt','w')>>"%ptr%\PYTHON.SCRIPT.PY"
+ECHO file = open('%str%\\win.log.1.txt','r')>>"%ptr%\PYTHON.SCRIPT.PY"
+ECHO lines = file.readlines()>>"%ptr%\PYTHON.SCRIPT.PY"
+ECHO import re >>"%ptr%\PYTHON.SCRIPT.PY"
+powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"%ptr%\PYTHON.SCRIPT.PY" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"%ptr%\PYTHON.SCRIPT.PY")& powershell -c "write-host $\"'\"">>"%ptr%\PYTHON.SCRIPT.PY"
+ECHO for line in lines:>>"%ptr%\PYTHON.SCRIPT.PY"
+POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"%ptr%\PYTHON.SCRIPT.PY"
 Start Cmd /v:off /c echo_me.bat
  
  timeout 3
 REM this timeout is important to make sure the file Writes properly to the Same file this script is already writing to
-POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
-ECHO writer.close()>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
+POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%ptr%\PYTHON.SCRIPT.PY"
+POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%ptr%\PYTHON.SCRIPT.PY"
+ECHO writer.close()>>"%ptr%\PYTHON.SCRIPT.PY"
 
-echo file.close()>>"c:\USERS\ANIL BAPNA\DESKTOP\PYTHON.SCRIPT.PY"
+echo file.close()>>"%ptr%\PYTHON.SCRIPT.PY"
 
 REM this is where I rename the python file according to the recurse level
 
 rename PYTHON.SCRIPT.PY PYTHON.SCRIPT.!counter!.PY
+
 
 goto lop
 
