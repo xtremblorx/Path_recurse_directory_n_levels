@@ -1,4 +1,6 @@
 SETLocal EnableDELAYEDexpansioN
+
+rem Initialise this counter according to the Initial Depth
 set /a counter=0
 echo Please run dir /s ^>win.log.1.txt  AND enter the folder path BELOW:
 rem THIS IS THE PATH POSITION, STARTING IS O
