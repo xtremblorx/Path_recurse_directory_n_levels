@@ -17,7 +17,8 @@ set ptr=%ptr%\Python.script.py
 
 Timeout 1 >nul
 set ptr=%ptr:\\=\%
-
+Timeout 1 >nul
+set ptr=%ptr:"=%
 :lop
 
 TIMEOUT 2
