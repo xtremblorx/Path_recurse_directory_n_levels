@@ -1,6 +1,6 @@
 ## Try running the following Commands in a Directory whose contents you want to work upon:
 `dir /ad /b >win.log.1.txt`
-### Please make sure the above command is exactly the same including the output filename
+### Please make sure the above command is exactly the same especially the output filename
 ###### Now please Transfer this file into a convenient location (where the BAT will have read write access)
 ###### Now run the BAT (in the same folder) and enter the folder path when prompted <i><b>without trailing slash or quotes</i></b>
 
