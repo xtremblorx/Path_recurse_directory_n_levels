@@ -12,6 +12,12 @@ set /p ptr=
 echo CDing into %ptr%
 set str=%ptr:\=\\%
 
+REM trimming path names
+set ptr=%ptr%\Python.script.py
+
+Timeout 1 >nul
+set ptr=%ptr:\\=\%
+
 :lop
 
 TIMEOUT 2
