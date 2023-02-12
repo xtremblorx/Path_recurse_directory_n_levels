@@ -30,22 +30,22 @@ rem PLEASE ENTER windows friendly path avoid Ampersand and other characters whic
 
 rem FILE TO WRITE PATH BE CHANGED
 
-ECHO writer = open('%str%\\win.log.part.!counter!.txt','w')>>"%ptr%\PYTHON.SCRIPT.PY"
-ECHO file = open('%str%\\win.log.1.txt','r')>>"%ptr%\PYTHON.SCRIPT.PY"
-ECHO lines = file.readlines()>>"%ptr%\PYTHON.SCRIPT.PY"
-ECHO import re >>"%ptr%\PYTHON.SCRIPT.PY"
-powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"%ptr%\PYTHON.SCRIPT.PY" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"%ptr%\PYTHON.SCRIPT.PY")& powershell -c "write-host $\"'\"">>"%ptr%\PYTHON.SCRIPT.PY"
-ECHO for line in lines:>>"%ptr%\PYTHON.SCRIPT.PY"
-POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"%ptr%\PYTHON.SCRIPT.PY"
+ECHO writer = open('%str%\\win.log.part.!counter!.txt','w')>>"%ptr%"
+ECHO file = open('%str%\\win.log.1.txt','r')>>"%ptr%"
+ECHO lines = file.readlines()>>"%ptr%"
+ECHO import re >>"%ptr%"
+powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"%ptr%" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"%ptr%")& powershell -c "write-host $\"'\"">>"%ptr%"
+ECHO for line in lines:>>"%ptr%"
+POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"%ptr%"
 Start Cmd /v:off /c echo_me.bat
  
  timeout 3
 REM this timeout is important to make sure the file Writes properly to the Same file this script is already writing to
-POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%ptr%\PYTHON.SCRIPT.PY"
-POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%ptr%\PYTHON.SCRIPT.PY"
-ECHO writer.close()>>"%ptr%\PYTHON.SCRIPT.PY"
+POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%ptr%"
+POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%ptr%"
+ECHO writer.close()>>"%ptr%"
 
-echo file.close()>>"%ptr%\PYTHON.SCRIPT.PY"
+echo file.close()>>"%ptr%"
 
 REM this is where I rename the python file according to the recurse level
 
