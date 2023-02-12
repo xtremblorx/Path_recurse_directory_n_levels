@@ -12,6 +12,6 @@ eg. `c:\users\my\desktop`
 #### Now please run something like this in the command prompt:
 ``for /l %i in (1,1,5) do python python.%i.py``
 
-#### Replace number 5 above with your depth
+#### to run ALL the Python Scripts. Replace number 5 above with your ( own MAX ) depth
 
 
