@@ -11,6 +11,7 @@ echo .-Also try to make sure folder location is bat friendly, where it can read-
 set /p ptr=
 echo CDing into %ptr%
 set str=%ptr:\=\\%
+set str=%str:"=%
 
 REM trimming path names
 set ptr=%ptr%\Python.script.py
@@ -49,7 +50,7 @@ echo file.close()>>"%ptr%"
 
 REM this is where I rename the python file according to the recurse level
 
-rename PYTHON.SCRIPT.PY PYTHON.SCRIPT.!counter!.PY
+rename "%ptr%" PYTHON.SCRIPT.!counter!.PY
 
 
 goto lop
