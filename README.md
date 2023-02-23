@@ -13,5 +13,17 @@ eg. `c:\users\my\desktop`
 ``for /l %i in (1,1,5) do python python.%i.py``
 
 #### to run ALL the Python Scripts. Replace number 5 above with your ( own MAX ) depth
+<sup><ins>Here is a Sample Command line Session :</ins>
+```
+cd   \
+copy 'c:\users\my\downloads\WRITE A SCRIPT.BAT' c:\users\my\desktop
+copy 'ECHO_ME.BAT' c:\users\my\desktop
+dir /ad /b >c:\users\my\desktop\win.log.1.txt
+for /l %i in (1,1,5) do python python.%i.py
+```
+
+
+
+
 
 
