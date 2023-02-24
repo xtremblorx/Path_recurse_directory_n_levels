@@ -1,14 +1,17 @@
 SETLocal EnableDELAYEDexpansioN
-
+@echo off
 rem Initialise this counter according to the Initial Depth
 set /a counter=0
 echo Please run dir /s ^>win.log.1.txt  AND enter the folder path BELOW:
 rem THIS IS THE PATH POSITION, STARTING IS O
+timeout 1 >nul
+cls
 echo Enter path ........ with no trailing slash in the end 
 echo .-Also try to make sure folder location is bat friendly, where it can read-write preferably the desktop-.
 
 
 set /p ptr=
+echo on
 if "%ptr%"=="" ( for /f "delims=*" %%i in ('cd') DO set ptr=%%i)
 echo CDing into %ptr%
 set str=%ptr:\=/%
@@ -29,16 +32,18 @@ rem PLEASE ENTER windows friendly path avoid Ampersand and other characters whic
 
 
 
-
+@echo off
+echo Enter the file name to split:
+set /p filename=
 rem FILE TO WRITE PATH BE CHANGED
 powershell -c "write-host -nonewline writer = open\"(\" \"'\"">"%ptr%"
 for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
-powershell -c "write-host -nonewline /win.log.part.!counter!.txt\"'\" \",\" \"'\"" >>"%ptr%"
+powershell -c "write-host -nonewline /!filename!.PART.!counter!.txt\"'\" \",\" \"'\"" >>"%ptr%"
 powershell -c "write-host w\"'\" \")\"" >>"%ptr%"
 
 powershell -c "write-host -nonewline file = open\"(\" \"'\"">>"%ptr%"
 for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
-powershell -c "write-host -nonewline /win.log.1.txt\"'\" \",\" \"'\"" >>"%ptr%"
+powershell -c "write-host -nonewline /!filename!\"'\" \",\" \"'\"" >>"%ptr%"
 powershell -c "write-host r\"'\" \")\"" >>"%ptr%"
 ECHO. >>"%ptr%"
 ECHO lines = file.readlines()>>"%ptr%"
