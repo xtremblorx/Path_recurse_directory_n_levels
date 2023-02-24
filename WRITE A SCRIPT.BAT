@@ -42,7 +42,48 @@ Start Cmd /v:off /c echo_me.bat
  
  timeout 3
 REM this timeout is important to make sure the file Writes properly to the Same file this script is already writing to
+POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%ptr%"set ptr=%ptr:"=%
+:lop
+
+TIMEOUT 2
+set /a counter+=1
+rem PLEASE ENTER windows friendly path avoid Ampersand and other characters which may interfere with this BAT
+
+
+
+
+rem FILE TO WRITE PATH BE CHANGED
+powershell -c "write-host -nonewline writer = open\"(\" \"'\"">"%ptr%"
+for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
+powershell -c "write-host -nonewline /win.log.part.!counter!.txt\"'\" \",\" \"'\"" >>"%ptr%"
+powershell -c "write-host w\"'\" \")\"" >>"%ptr%"
+
+powershell -c "write-host -nonewline file = open\"(\" \"'\"">>"%ptr%"
+for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
+powershell -c "write-host -nonewline /win.log.1.txt\"'\" \",\" \"'\"" >>"%ptr%"
+powershell -c "write-host r\"'\" \")\"" >>"%ptr%"
+ECHO. >>"%ptr%"
+ECHO lines = file.readlines()>>"%ptr%"
+ECHO import re >>"%ptr%"
+powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"%ptr%" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"%ptr%")& powershell -c "write-host $\"'\"">>"%ptr%"
+ECHO for line in lines:>>"%ptr%"
+POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"%ptr%"
+Start Cmd /v:off /c echo_me.bat
+ 
+ timeout 3
+REM this timeout is important to make sure the file Writes properly to the Same file this script is already writing to
 POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%ptr%"
+POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%ptr%"
+ECHO writer.close()>>"%ptr%"
+
+echo file.close()>>"%ptr%"
+
+REM this is where I rename the python file according to the recurse level
+
+rename "%ptr%" PYTHON.SCRIPT.!counter!.PY
+
+
+goto lop
 POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%ptr%"
 ECHO writer.close()>>"%ptr%"
 
