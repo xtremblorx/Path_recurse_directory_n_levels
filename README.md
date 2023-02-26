@@ -28,7 +28,7 @@
 #### Now please run ALL python files like this in the command prompt:
 ``for /l %i in (1,1,5) do python python.%i.py``
 
-#### to run ALL the Python Scripts. Replace number 5 above with your ( own MAX ) depth
+#### to run ALL the Python Scripts. Replace the loop number above with your ( own MAX ) depth
 <sup><ins>Here is a Sample Command line Session :</ins>
 ```
 cd   \
