@@ -19,9 +19,10 @@
 
 <sup><ins>Here is a Sample Command line Session :</ins>
 ```
-cd   \
-copy 'c:\users\my\downloads\REDDEMER.BAT' c:\users\my\desktop
+cd   c:\users\my\downloads\
+copy REDDEMER.BAT' c:\users\my\desktop
 copy 'ECHO_ME.BAT' c:\users\my\desktop
+CD \
 dir /s /ad /b >c:\users\my\desktop\win.log.1.txt
 cd c:\users\my\desktop
 REDDEMER.BAT
