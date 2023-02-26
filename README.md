@@ -4,7 +4,7 @@
               `dir /s /ad /b >win.log.1.txt`
 
 
-##### Now to split this file into paths by their DEPTHS
+##### Now to split this file into list of paths according to their DEPTHS
 
 ###### Now run the BAT file REDDEMER.bat and enter the folder path when prompted AND enter (above) input file name ]
 
