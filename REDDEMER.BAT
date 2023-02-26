@@ -1,4 +1,5 @@
 SETLocal EnableDELAYEDexpansioN
+title WRITE A SCRIPT
 echo off
 rem Initialise this counter according to the Initial Depth
 set /a counter=0
