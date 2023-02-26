@@ -13,12 +13,14 @@
 <sup>c:\abr......................................................c:\user\myhello
 
 ## Try running the following Commands in a Directory whose contents you want to work upon:
-`dir /ad /b >win.log.1.txt`
-### Please make sure the above command is exactly the same especially the output file name
-###### Now please Transfer this file into a convenient location (where the BAT will have read write access)
-###### Now run the BAT (in the same folder) and enter the folder path when prompted <i><b>without trailing slash or quotes</i></b>
+`dir /s /ad /b >win.log.1.txt`
 
-eg. `c:\users\my\desktop`
+### <sup><sup>IF YOU WANT TO WORK WITH FILES, TRY `dir /s /b >win.log.1.txt`</sup></sup>
+### Enter the above file name when your run the script-
+###### Now please Transfer this file where the BAT will have read write access
+###### Now run the BAT and enter the folder path when prompted AND enter (above) input file name
+
+eg. `c:\users\my\desktop` And `win.log.1.txt`
 
 ### Now there will be a number of python scripts generated . Please close bat file when the python script number which is according to N recurse level is according to your requirement has been written.
 #### For eg. If my max depth level requirement is 4  , then I may close the file once `python.4.py` is written
