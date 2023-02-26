@@ -13,10 +13,10 @@
 #### Please close bat file when python.%i.py is WRITTEN where %i is the DEPTH
 
 
-####  Now please run ALL python files like this in the command prompt:
+####  Here is a sample command to run All python files, where 5 is the depth:
 ``for /l %i in (1,1,5) do python python.%i.py``
 
-####  to run ALL the Python Scripts. Replace the loop number above with your ( own MAX ) depth
+
 <sup><ins>Here is a Sample Command line Session :</ins>
 ```
 cd   \
