@@ -32,7 +32,7 @@ eg. `c:\users\my\desktop` And `win.log.1.txt`
 <sup><ins>Here is a Sample Command line Session :</ins>
 ```
 cd   \
-copy 'c:\users\my\downloads\WRITE A SCRIPT.BAT' c:\users\my\desktop
+copy 'c:\users\my\downloads\REDDEMER.BAT' c:\users\my\desktop
 copy 'ECHO_ME.BAT' c:\users\my\desktop
 dir /ad /b >c:\users\my\desktop\win.log.1.txt
 cd c:\users\my\desktop
