@@ -4,13 +4,13 @@
               `dir /s /ad /b >win.log.1.txt`
 
 
-##### Now to split this file into list of paths according to their DEPTHS
+
 
 ###### Now run the BAT file REDDEMER.bat and enter the folder path when prompted AND enter (above) input file name ]
 
 
 
-##### Please close bat file when python.%i.py is WRITTEN where %i is the DEPTH
+##### Please close bat file when python.%i.py is FINISHED WRITING where %i is the DEPTH
 
 
 #####  Here is a sample command to run All python files, where 5 is the depth:
