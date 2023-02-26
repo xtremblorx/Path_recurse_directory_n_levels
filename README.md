@@ -22,10 +22,10 @@
 
 eg. `c:\users\my\desktop` And `win.log.1.txt`
 
-### Now there will be a number of python scripts generated . Please close bat file when the python script number which is according to N recurse level is according to your requirement has been written.
+### Now there will be a number of python scripts generated . Please close bat file N recurse level according to your requirement has been written.
 #### For eg. If my max depth level requirement is 4  , then I may close the file once `python.4.py` is written
 
-#### Now please run something like this in the command prompt:
+#### Now please run ALL python files like this in the command prompt:
 ``for /l %i in (1,1,5) do python python.%i.py``
 
 #### to run ALL the Python Scripts. Replace number 5 above with your ( own MAX ) depth
