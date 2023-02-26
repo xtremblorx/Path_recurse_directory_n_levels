@@ -24,10 +24,10 @@ Timeout 1 >nul
 
 Timeout 1 >nul
 set ptr=%ptr:"=%
-:lop
+
 
 TIMEOUT 2
-set /a counter+=1
+
 rem PLEASE ENTER windows friendly path avoid Ampersand and other characters which may interfere with this BAT
 
 
@@ -35,6 +35,8 @@ rem PLEASE ENTER windows friendly path avoid Ampersand and other characters whic
 @echo off
 echo Enter the file name to split:
 set /p filename=
+:lop
+set /a counter+=1
 rem FILE TO WRITE PATH BE CHANGED
 powershell -c "write-host -nonewline writer = open\"(\" \"'\"">"%ptr%"
 for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
