@@ -1,12 +1,16 @@
 <sup>SAMPLE INPUT:`win.log.1.txt`................................SAMPLE OUTPUT: `win.log.1.txt.PART.1`</sup>
-```
-c:\abr\usr\hel\20\live.jpg                         c:\abr
 
-c:\abr                                             c:\user
+<sup>c:\abr\usr\hel\20\live.jpg..................................c:\abr
 
-c:\user\myhello
+<sup>c:\abr......................................................c:\user
 
+###<ins> File number of output txt indicates RECURSE level/ PATH depth level:</ins>
 
+<sup>SAMPLE INPUT:`win.log.1.txt`................................SAMPLE OUTPUT: `win.log.1.txt.PART.2`
+
+<sup>c:\abr\usr\hel\20\live.jpg..................................c:\abr\usr
+
+<sup>c:\abr......................................................c:\user\myhello
 
 ## Try running the following Commands in a Directory whose contents you want to work upon:
 `dir /ad /b >win.log.1.txt`
