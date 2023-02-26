@@ -10,7 +10,7 @@
 
 
 
-##### Please close bat file when python.%i.py is FINISHED WRITING where %i is the DEPTH
+##### Please Kill the bat file when python.%i.py is FINISHED WRITING where %i is the DEPTH
 
 
 #####  Here is a sample command to run All python files, where 5 is the depth:
