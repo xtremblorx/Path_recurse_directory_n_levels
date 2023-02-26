@@ -35,6 +35,7 @@ rem PLEASE ENTER windows friendly path avoid Ampersand and other characters whic
 @echo off
 echo Enter the file name to split:
 set /p filename=
+echo on
 :lop
 set /a counter+=1
 rem FILE TO WRITE PATH BE CHANGED
