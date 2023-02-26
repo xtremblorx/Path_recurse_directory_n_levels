@@ -1,3 +1,13 @@
+<sup>SAMPLE INPUT:`win.log.1.txt`................................SAMPLE OUTPUT: `win.log.1.txt.PART.1`</sup>
+```
+c:\abr\usr\hel\20\live.jpg                         c:\abr
+
+c:\abr                                             c:\user
+
+c:\user\myhello
+
+
+
 ## Try running the following Commands in a Directory whose contents you want to work upon:
 `dir /ad /b >win.log.1.txt`
 ### Please make sure the above command is exactly the same especially the output file name
