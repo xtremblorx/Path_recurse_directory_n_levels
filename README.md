@@ -13,7 +13,7 @@
 ##### Please Kill the bat file when python.%i.py is FINISHED WRITING where %i is the DEPTH. Then simple run all the python scripts one by one to generate corresponding depth output files.
 
 
-#####  Here is a sample command to run All python files, where 5 is the depth:
+##### <sup> Here is a sample command to run All python files, where 5 is the depth: </sup>
 ``for /l %i in (1,1,5) do python python.%i.py``
 
 
