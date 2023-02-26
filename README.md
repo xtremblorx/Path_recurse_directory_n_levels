@@ -35,6 +35,8 @@ cd   \
 copy 'c:\users\my\downloads\WRITE A SCRIPT.BAT' c:\users\my\desktop
 copy 'ECHO_ME.BAT' c:\users\my\desktop
 dir /ad /b >c:\users\my\desktop\win.log.1.txt
+cd c:\users\my\desktop
+REDDEMER.BAT
 for /l %i in (1,1,5) do python python.%i.py
 ```
 
