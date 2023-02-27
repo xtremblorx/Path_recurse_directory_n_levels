@@ -1,77 +1,81 @@
-SETLocal EnableDELAYEDexpansioN
-title WRITE A SCRIPT
-echo off
-rem Initialise this counter according to the Initial Depth
-set /a counter=0
-echo Please run dir /s ^>win.log.1.txt  AND enter the folder path BELOW:
-rem THIS IS THE PATH POSITION, STARTING IS O
-timeout 1 >nul
-cls
-echo Enter Folder path:
-
-
-set /p ptr=
-echo on
-if "%ptr%"=="" ( for /f "delims=*" %%i in ('cd') DO set ptr=%%i)
-echo directory is %ptr%
-set str=%ptr:\=/%
-set str=%str:"=%
-
-REM trimming path names
-set ptr=%ptr%\Python.script.py
-
-Timeout 1 >nul
-set ptr=%ptr:"=%
-
-rem PLEASE ENTER windows friendly path avoid Ampersand and other characters which may interfere with this BAT
-
-
-
-echo off
+SETLOCAL ENABLEDELAYEDEXPANSION
+REM ------------------------------------------------.
+REM   CHRISTIAN					    |
+REM ------------------------------------------------+---
+TITLE WRITE A SCRIPT
+ECHO OFF
+REM INITIALISE THIS COUNTER ACCORDING TO THE INITIAL DEPTH
+SET /A COUNTER=0
+ECHO PLEASE RUN DIR /S ^>WIN.LOG.1.TXT  AND ENTER THE FOLDER PATH BELOW:
+REM THIS IS THE PATH POSITION, STARTING IS O
+TIMEOUT 1 >NUL
 CLS
-echo Enter the file name to split:
-set /p filename=
-echo on
-:lop
-color 8 
+SET LOOP=%1
+IF "%LOOP%"=="" ( SET /A LOOP=0 )
+ECHO ENTER FOLDER PATH:
+
+
+SET /P PTR=
+ECHO ON
+IF "%PTR%"=="" ( FOR /F "DELIMS=*" %%I IN ('CD') DO SET PTR=%%I)
+ECHO DIRECTORY IS %PTR%
+SET STR=%PTR:\=/%
+SET STR=%STR:"=%
+
+REM TRIMMING PATH NAMES
+SET PTR=%PTR%\PYTHON.SCRIPT.PY
+
+TIMEOUT 1 >NUL
+SET PTR=%PTR:"=%
+
+REM PLEASE ENTER WINDOWS FRIENDLY PATH AVOID AMPERSAND AND OTHER CHARACTERS WHICH MAY INTERFERE WITH THIS BAT
+
+
+
+ECHO OFF
+CLS
+ECHO ENTER THE FILE NAME TO SPLIT:
+SET /P FILENAME=
+ECHO ON
+:LOP
+COLOR 8 
 CLS
 ECHO OFF
-for /l %%i in (1,1,20) do ECHO GENERATING PYTHON.SCRIPT!COUNTER!.PY, EXIT NOW
-timeout 3 >nul
+FOR /L %%I IN (1,1,20) DO ECHO GENERATING PYTHON.SCRIPT!COUNTER!.PY, EXIT NOW
+TIMEOUT 3 >NUL
 CLS
 COLOR F 
 ECHO ON
+IF %LOOP%==0 ( SET /A COUNTER+=1 ) ELSE ( SET /A COUNTER=LOOP )
 
-set /a counter+=1
-rem FILE TO WRITE PATH BE CHANGED
-powershell -c "write-host -nonewline writer = open\"(\" \"'\"">"%ptr%"
-for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
-powershell -c "write-host -nonewline /!filename!.PART.!counter!.txt\"'\" \",\" \"'\"" >>"%ptr%"
-powershell -c "write-host w\"'\" \")\"" >>"%ptr%"
+REM FILE TO WRITE PATH BE CHANGED
+POWERSHELL -C "WRITE-HOST -NONEWLINE WRITER = OPEN\"(\" \"'\"">"%PTR%"
+FOR /F "DELIMS=*" %%I IN ("%STR%") DO POWERSHELL -C "WRITE-HOST -NONEWLINE %%I">>"%PTR%"
+POWERSHELL -C "WRITE-HOST -NONEWLINE /!FILENAME!.PART.!COUNTER!.TXT\"'\" \",\" \"'\"" >>"%PTR%"
+POWERSHELL -C "WRITE-HOST W\"'\" \")\"" >>"%PTR%"
 
-powershell -c "write-host -nonewline file = open\"(\" \"'\"">>"%ptr%"
-for /f "delims=*" %%i in ("%str%") do powershell -c "write-host -nonewline %%i">>"%ptr%"
-powershell -c "write-host -nonewline /!filename!\"'\" \",\" \"'\"" >>"%ptr%"
-powershell -c "write-host r\"'\" \")\"" >>"%ptr%"
-ECHO. >>"%ptr%"
-ECHO lines = file.readlines()>>"%ptr%"
-ECHO import re >>"%ptr%"
-powershell -c "write-host -nonewline regex = r\"'\"[A-Za-z][:]">>"%ptr%" & (for /l %%i in (1,1,!counter!) do powershell -c "write-host -nonewline [\\][^\\]+">>"%ptr%")& powershell -c "write-host $\"'\"">>"%ptr%"
-ECHO for line in lines:>>"%ptr%"
-POWERSHELL -C "wRITE-HOST \"`tmatch = re.match(regex, line)\"">>"%ptr%"
-Start Cmd /v:off /c echo_me.bat
-for /l %%i in (1,1,20) do ECHO TIMEOUT IS NECESSARY, DO NOT CLOSE WINDOW,
-timeout 3 
-REM this timeout is important to make sure the file Writes properly to the Same file this script is already writing to
-POWERSHELL -C "wRITE-HOST \"`t`tprint(line)\"">>"%ptr%"
-POWERSHELL -C "wRITE-HOST \"`t`twriter.writelines(line)\"">>"%ptr%"
-ECHO writer.close()>>"%ptr%"
+POWERSHELL -C "WRITE-HOST -NONEWLINE FILE = OPEN\"(\" \"'\"">>"%PTR%"
+FOR /F "DELIMS=*" %%I IN ("%STR%") DO POWERSHELL -C "WRITE-HOST -NONEWLINE %%I">>"%PTR%"
+POWERSHELL -C "WRITE-HOST -NONEWLINE /!FILENAME!\"'\" \",\" \"'\"" >>"%PTR%"
+POWERSHELL -C "WRITE-HOST R\"'\" \")\"" >>"%PTR%"
+ECHO. >>"%PTR%"
+ECHO LINES = FILE.READLINES()>>"%PTR%"
+ECHO IMPORT RE >>"%PTR%"
+POWERSHELL -C "WRITE-HOST -NONEWLINE REGEX = R\"'\"[A-ZA-Z][:]">>"%PTR%" & (FOR /L %%I IN (1,1,!COUNTER!) DO POWERSHELL -C "WRITE-HOST -NONEWLINE [\\][^\\]+">>"%PTR%")& POWERSHELL -C "WRITE-HOST $\"'\"">>"%PTR%"
+ECHO FOR LINE IN LINES:>>"%PTR%"
+POWERSHELL -C "WRITE-HOST \"`TMATCH = RE.MATCH(REGEX, LINE)\"">>"%PTR%"
+START CMD /V:OFF /C ECHO_ME.BAT
+FOR /L %%I IN (1,1,20) DO ECHO TIMEOUT IS NECESSARY, DO NOT CLOSE WINDOW,
+TIMEOUT 3 
+REM THIS TIMEOUT IS IMPORTANT TO MAKE SURE THE FILE WRITES PROPERLY TO THE SAME FILE THIS SCRIPT IS ALREADY WRITING TO
+POWERSHELL -C "WRITE-HOST \"`T`TPRINT(LINE)\"">>"%PTR%"
+POWERSHELL -C "WRITE-HOST \"`T`TWRITER.WRITELINES(LINE)\"">>"%PTR%"
+ECHO WRITER.CLOSE()>>"%PTR%"
 
-echo file.close()>>"%ptr%"
+ECHO FILE.CLOSE()>>"%PTR%"
 
-REM this is where I rename the python file according to the recurse level
+REM THIS IS WHERE I RENAME THE PYTHON FILE ACCORDING TO THE RECURSE LEVEL
 
-rename "%ptr%" PYTHON.SCRIPT.!counter!.PY
+RENAME "%PTR%" PYTHON.SCRIPT.!COUNTER!.PY
 
-
-goto lop
+IF %LOOP%==0 ( GOTO LOP )
