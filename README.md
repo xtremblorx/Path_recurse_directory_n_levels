@@ -8,7 +8,7 @@
 
 
 
-###### Now run the BAT file REDDEMER.bat and enter the folder path when prompted AND enter (above) input file name ]
+###### Now run the BAT file REDDEMER.bat and enter the folder path prompted AND enter (above) input file name ]
 
 
 
