@@ -17,7 +17,7 @@
 
 
 ##### <sup> Here is a sample command to run all the python files all at once, simply replace the number %i with the max depth or the n number of last python file that you generated using script: </sup>
-``for /l %i in (1,1,%i) do python python.%i.py``
+``for /l %k in (1,1,%i) do python python.%k.py``
 
 
 <sup><ins>Here is a Sample Command line Session :</ins>
